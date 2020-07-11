@@ -1,3 +1,4 @@
-# Get Started!
+Welcome to the Playlist 1
+=========================
 
-Add files and start typing 🎉
+Version 1 of the Playlist application
