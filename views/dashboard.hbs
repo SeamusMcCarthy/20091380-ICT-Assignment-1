@@ -4,12 +4,16 @@
   <section class="ui segment">
     <h2 class="ui header">
       {{title}}
+      <br>
+      {{duration}}
     </h2>
     <table class="ui table">
       <thead>
         <tr>
           <th>Song</th>
           <th>Artist</th>
+          <th>Duration</th>
+          <th>Genre</th>
         </tr>
       </thead>
       <tbody>
@@ -20,6 +24,12 @@
             </td>
             <td>
               {{artist}}
+            </td>
+            <td>
+              {{duration}}
+            </td>
+            <td>
+              {{genre}}
             </td>
           </tr>
         {{/each}}
