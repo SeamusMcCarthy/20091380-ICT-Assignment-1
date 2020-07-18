@@ -4,36 +4,8 @@
   <section class="ui segment">
     <h2 class="ui header">
       {{title}}
-      <br>
-      {{duration}}
     </h2>
-    <table class="ui table">
-      <thead>
-        <tr>
-          <th>Song</th>
-          <th>Artist</th>
-          <th>Duration</th>
-          <th>Genre</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#each songs}}
-          <tr>
-            <td>
-              {{title}}
-            </td>
-            <td>
-              {{artist}}
-            </td>
-            <td>
-              {{duration}}
-            </td>
-            <td>
-              {{genre}}
-            </td>
-          </tr>
-        {{/each}}
-      </tbody>
-    </table>
+    <p> Total Duration: {{duration}} </p>
+    <a href="/playlist/{{id}}"> View </a>
   </section>
 {{/each}}
