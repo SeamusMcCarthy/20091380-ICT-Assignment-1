@@ -57,32 +57,9 @@
       "duration": 220
     },
     {
-      "id": "03",
-      "title": "Dev stuff",
-      "songs": [
-        {
-          "id": "10",
-          "title": "Deep Peace",
-          "artist": "Devin Townsend",
-          "duration": 20,
-          "genre": "Rock"
-        },
-        {
-          "id": "11",
-          "title": "Hyperdrive",
-          "artist": "Devin Townsend Presents Ziltoid the Omniscient",
-          "duration": 20,
-          "genre": "Rock"
-        },
-        {
-          "id": "12",
-          "title": "Bend It Like Bender",
-          "artist": "Devin Townsend Project",
-          "duration": 20,
-          "genre": "Rock"
-        }
-      ],
-      "duration": 320
+      "id": "d2d08af0-cbab-11ea-8fe5-d5d6e6fcd257",
+      "title": "Dummy playlist",
+      "songs": []
     }
   ]
 }
