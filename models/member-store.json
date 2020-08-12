@@ -1,0 +1,16 @@
+{
+  "members": [
+    {
+      "name": "Test14",
+      "gender": "M",
+      "email": "test14@test.com",
+      "password": "Test14",
+      "address": "123",
+      "height": "2.0",
+      "startingweight": "93.2",
+      "id": "5fd605a0-dc1f-11ea-867e-99c10bb45854",
+      "numassignments": 7,
+      "numgoals": 5
+    }
+  ]
+}

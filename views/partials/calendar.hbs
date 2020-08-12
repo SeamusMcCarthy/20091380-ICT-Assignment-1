@@ -1,0 +1,24 @@
+<script>
+    // Calendar. Didn't work when put into controls.js so had to keep it in the hbs files it's used in
+    $('#custom_format_calendar')
+            .calendar({
+                monthFirst: false,
+                type: 'date',
+                formatter: {
+                    date: function (date, settings) {
+                        // Fomantic calendar doesn't allow for date format selection so
+                        // use arrays to get textual values so that goal & assessment date formats match
+                        if (!date) return '';
+                        var weekdays = new Array("Sun", "Mon", "Tue", "Wed", "Thurs", "Fri", "Sat");
+                        var dayOfWeek = weekdays[date.getDay()];
+
+                        var months = new Array("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec");
+                        var monthText = months[date.getMonth()];
+
+                        var day = date.getDate();
+                        var year = date.getFullYear();
+                        return dayOfWeek + ', ' + day + ' ' + monthText + ' ' + year;
+                    }
+                }
+            });
+</script>

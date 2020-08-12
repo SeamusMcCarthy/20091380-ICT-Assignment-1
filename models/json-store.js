@@ -30,6 +30,11 @@ class JsonStore {
     return this.db.get(collection).value();
   }
 
+  findAllFilterBy(collection, filter) {
+    const results = this.db.get(collection).filter(filter).value();
+    return results;
+  }
+
   findOneBy(collection, filter) {
     const results = this.db.get(collection).filter(filter).value();
     return results[0];

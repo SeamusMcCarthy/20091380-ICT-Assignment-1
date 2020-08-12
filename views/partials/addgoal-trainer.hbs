@@ -1,0 +1,17 @@
+<form class="ui segment form" action="/dashboard/addgoal/{{memberid}}" method="POST">
+    {{id}}
+    <div class="two fields">
+        <div class="field ui calendar" id="custom_format_calendar">
+            <label>Target Date</label>
+            <div class="ui input left icon">
+                <i class="calendar icon"></i>
+                <input type="text" placeholder="Date" name="date" required>
+            </div>
+        </div>
+        <div class="field">
+            <label>Target Weight</label>
+            <input placeholder="00.00kg" type="text" name="weight" required>
+        </div>
+    </div>
+    <button class="ui blue submit button"> Add Goal </button>
+</form>

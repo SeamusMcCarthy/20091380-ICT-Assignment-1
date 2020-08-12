@@ -1,7 +1,7 @@
 {
-  "name": "playlist-1",
+  "name": "ICT-Assignment-1",
   "version": "0.0.1",
-  "description": "Project at the end of Playlist-1 lab",
+  "description": "ICT Skills Assignment 1",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"

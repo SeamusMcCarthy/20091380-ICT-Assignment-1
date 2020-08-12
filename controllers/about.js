@@ -4,9 +4,9 @@ const logger = require("../utils/logger");
 
 const about = {
   index(request, response) {
-    logger.info("about rendering");
+    logger.info("Rendering About");
     const viewData = {
-      title: "About Playlist 1"
+      title: "About Play Gym"
     };
     response.render("about", viewData);
   }
