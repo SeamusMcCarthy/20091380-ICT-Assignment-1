@@ -64,6 +64,13 @@ app.engine(
           if (trend === "Equal")
             string = "<i class=\"arrows alternate horizontal icon big\"></i>";
           return string;
+        },
+        randomEncouragement: function() {
+          const phrases = ["Good job!","You can do this!","You got this!","Feel the burn!","Awesome effort!",
+          "There is no stopping you!","Maximum effort!","No pain, no gain!", "Think of that summer bod!",
+          "Almost at target!"]
+
+          return phrases[Math.floor(Math.random() * 10)];
         }
       }
     })

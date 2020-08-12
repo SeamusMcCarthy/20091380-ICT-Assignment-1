@@ -39,7 +39,7 @@ const accounts = {
   register(request, response) {
     const member = request.body;
     member.id = uuid.v1();
-    member.numassignments = 0;
+    member.numassessments = 0;
     member.numgoals = 0;
     member.email = request.body.email.toLowerCase();
 

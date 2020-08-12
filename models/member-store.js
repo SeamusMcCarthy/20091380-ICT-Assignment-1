@@ -33,9 +33,9 @@ const memberStore = {
 
   incrementNumAssessments(id) {
     const member = this.store.findOneBy(this.collection, {id: id});
-    let num = member.numassignments;
+    let num = member.numassessments;
     num += 1;
-    member.numassignments = num;
+    member.numassessments = num;
     this.store.save();
   },
 
