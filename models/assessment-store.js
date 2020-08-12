@@ -54,6 +54,12 @@ const assessmentStore = {
     const assessment = this.store.findOneBy(this.collection, {id: comment.id});
     assessment.comment = comment.comment;
     this.store.save();
+  },
+
+  updatetrend(assessmentid, trend) {
+    const assessment = this.store.findOneBy(this.collection, {id: assessmentid});
+    assessment.trend = trend;
+    this.store.save();
   }
 };
 

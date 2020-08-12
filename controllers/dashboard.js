@@ -74,10 +74,34 @@ const dashboard = {
   },
 
   trainerassessments(request, response) {
+    const member = memberStore.getMemberById(request.params.id);
+    const latestWeight = assessmentStore.getLatestWeight(request.params.id);
+    const goals = goalStore.getMemberGoals(request.params.id).reverse();
+    const assessments = assessmentStore.getMemberAssessments(request.params.id).reverse();
+
+    // As user has just logged in, assess their open goals
+    // If current weight is less than target, mark as 'Achieved'
+    // If date has passed, mark as 'Missed'
+    // Otherwise, leave 'Open'
+    for (let i = 0; i < goals.length; i++) {
+      const goal = goals[i];
+      if (goal.status === "Open") {
+        if (Number(latestWeight) <= Number(goal.weight)) {
+          logger.info("weights = " + latestWeight + " " + goal.weight);
+          goalStore.updateAchieved(goal.id);
+        }
+        else {
+          const date = new Date();
+          const goalDate = new Date(goal.date);
+          if (date > goalDate)
+            goalStore.updateMissed(goal.id);
+        }
+      }
+    }
     const viewData = {
       title: 'Trainer Dashboard',
-      assessments: assessmentStore.getMemberAssessments(request.params.id),
-      goals: goalStore.getMemberGoals(request.params.id),
+      assessments: assessments,
+      goals: goals,
       memberid: request.params.id
     };
     response.render('trainerassessment', viewData);

@@ -64,7 +64,7 @@ const accounts = {
       if (trainer && request.body.password === trainer.password) {
         logger.info(`logging in ${trainer.email}`);
         response.cookie('trainerid', trainer.email);
-        response.redirect('/trainerdashboard');
+        response.redirect('/dashboard');
       }
       else {
         response.redirect('/login');
