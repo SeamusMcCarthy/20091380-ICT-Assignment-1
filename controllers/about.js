@@ -1,14 +1,16 @@
-"use strict";
+'use strict';
 
-const logger = require("../utils/logger");
+const logger = require('../utils/logger');
 
 const about = {
+
   index(request, response) {
-    logger.info("Rendering About");
+
+    logger.info('Rendering About');
     const viewData = {
-      title: "About Play Gym"
+      title: 'About Play Gym'
     };
-    response.render("about", viewData);
+    response.render('about', viewData);
   }
 };
 

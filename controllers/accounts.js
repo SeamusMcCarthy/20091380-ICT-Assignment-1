@@ -1,61 +1,82 @@
-"use strict";
+'use strict';
 
-const memberstore = require('../models/member-store.js');
-const trainerstore = require('../models/trainer-store.js');
-const logger = require('../utils/logger.js');
+const logger = require('../utils/logger');
 const uuid = require('uuid');
 
+const memberStore = require('../models/member-store');
+const trainerStore = require('../models/trainer-store');
+const assessmentStore = require('../models/assessment-store');
+const goalStore = require('../models/goal-store');
+
+
 const accounts = {
+
   index(request, response) {
+
+    logger.info('Rendering Index');
+
     // Clear cookies in case session was abandoned without logging out.
     response.cookie('memberid', '');
     response.cookie('trainerid','');
     response.cookie('popup','');
+
     const viewData = {
       title: 'Login or Signup',
     };
     response.render('index', viewData);
+
   },
 
   login(request, response) {
+
     const viewData = {
       title: 'Login to the Service',
     };
     response.render('login', viewData);
+
   },
 
   logout(request, response) {
+
+    // Clear down cookies on exit
     response.cookie('memberid', '');
     response.cookie('trainerid','');
     response.cookie('popup','');
     response.redirect('/');
+
   },
 
   signup(request, response) {
+
     const viewData = {
       title: 'Login to the Service',
     };
     response.render('signup', viewData);
+
   },
 
   register(request, response) {
+
     const member = request.body;
     member.id = uuid.v1();
     member.numassessments = 0;
     member.numgoals = 0;
     member.email = request.body.email.toLowerCase();
 
-    if (memberstore.getMemberByEmail(member.email)) {
-      logger.info("This email address is already in use - Please try again!");
+    if (memberStore.getMemberByEmail(member.email)) {
+      logger.info('This email address is already in use - Please try again!');
     } else {
-      memberstore.addMember(member);
+      memberStore.addMember(member);
       logger.info(`registering ${member.email}`);
     }
     response.redirect('/');
+
   },
 
   authenticate(request, response) {
-    const member = memberstore.getMemberByEmail(request.body.email.toLowerCase());
+
+    // Attempt to login a member. If not found, try trainer
+    const member = memberStore.getMemberByEmail(request.body.email.toLowerCase());
     if (member && request.body.password === member.password) {
       logger.info(`logging in ${member.email}`);
       response.cookie('memberid', member.email);
@@ -63,7 +84,7 @@ const accounts = {
       response.redirect('/dashboard');
     }
     else {
-      const trainer = trainerstore.getTrainerByEmail(request.body.email.toLowerCase());
+      const trainer = trainerStore.getTrainerByEmail(request.body.email.toLowerCase());
       if (trainer && request.body.password === trainer.password) {
         logger.info(`logging in ${trainer.email}`);
         response.cookie('trainerid', trainer.email);
@@ -76,18 +97,21 @@ const accounts = {
   },
 
   getCurrentMember(request) {
+
     const memberEmail = request.cookies.memberid;
-    const member = memberstore.getMemberByEmail(memberEmail);
-    return memberstore.getMemberByEmail(memberEmail);
+    const member = memberStore.getMemberByEmail(memberEmail);
+    return memberStore.getMemberByEmail(memberEmail);
+
   },
 
   deleteMember(request, response) {
+
     const memberid = request.params.id;
+
     // Remove assessment data
     const memberAssessments = assessmentStore.getMemberAssessments(memberid);
     for (let x = 0; x < memberAssessments.length; x++) {
       const assessmentID = memberAssessments[x].id;
-      logger.info("Assessment id = " + assessmentID);
       assessmentStore.removeAssessment(assessmentID);
     }
 
@@ -101,6 +125,7 @@ const accounts = {
     // Remove member data
     memberStore.removeMember(memberid);
     response.redirect('/dashboard');
+
   },
 };
 

@@ -15,22 +15,24 @@ router.get("/about", about.index);
 router.get('/login', accounts.login);
 router.get('/signup', accounts.signup);
 router.get('/logout', accounts.logout);
-router.get("/dashboard", dashboard.checkindex);
-router.get('/memberindex', dashboard.memberindex);
-router.get('/trainerindex', dashboard.trainerindex);
 router.get('/profile', profile.index);
 
-router.get('/member/:id', dashboard.trainerassessments);
-router.get('/deletemember/:id', accounts.deleteMember);
+router.get("/dashboard", dashboard.checkIndex);
+router.get('/memberindex', dashboard.memberIndex);
+router.get('/trainerindex', dashboard.trainerIndex);
 
+
+router.get('/member/:id', dashboard.trainerAssessments);
+router.get('/deletemember/:id', accounts.deleteMember);
 router.get('/deleteassessment/:memberid/:id', assessments.deleteAssessment);
 router.get('/deletegoal/:memberid/:id', goals.deleteGoal);
+
 router.post('/dashboard/addassessment', assessments.addAssessment);
 router.post('/dashboard/addgoal', goals.addGoal);
 router.post('/dashboard/addgoal/:id', goals.addGoalTrainer);
 router.post('/register', accounts.register);
 router.post('/authenticate', accounts.authenticate);
-router.post('/updatemember', profile.updateprofile);
-router.post('/editcomment/:id', assessments.editcomment);
+router.post('/updatemember', profile.updateProfile);
+router.post('/editcomment/:id', assessments.editComment);
 
 module.exports = router;

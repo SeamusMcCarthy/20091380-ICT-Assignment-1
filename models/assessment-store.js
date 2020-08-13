@@ -1,7 +1,7 @@
 'use strict';
 
 const _ = require('lodash');
-const logger = require('../utils/logger');
+
 const JsonStore = require('./json-store');
 const memberStore = require("./member-store");
 const assessmentStore = {
@@ -46,11 +46,10 @@ const assessmentStore = {
     if (latestWeight === 0) {
       latestWeight = memberStore.getMemberById(memberid).startingweight;
     }
-    // logger.info('Latest weight : ' + latestWeight);
     return latestWeight;
   },
 
-  editcomment(comment) {
+  editComment(comment) {
     const assessment = this.store.findOneBy(this.collection, {id: comment.id});
     assessment.comment = comment.comment;
     this.store.save();
