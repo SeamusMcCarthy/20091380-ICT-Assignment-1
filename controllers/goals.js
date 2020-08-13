@@ -15,6 +15,7 @@ const goal = {
     newGoal.status = 'Open';
     goalStore.addGoal(newGoal);
     memberStore.incrementNumGoals(loggedInMember.id);
+    response.cookie('popup','Y');
     response.redirect('/dashboard');
   },
 
@@ -35,6 +36,7 @@ const goal = {
     logger.info(`Deleting Goal ${memberid} ' + ' ${goalId}`);
     goalStore.removeGoal(goalId);
     memberStore.decrementNumGoals(memberid);
+    response.cookie('popup','Y');
     response.redirect('/dashboard');
   },
 }

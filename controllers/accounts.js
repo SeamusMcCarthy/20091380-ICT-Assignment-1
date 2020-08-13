@@ -10,6 +10,7 @@ const accounts = {
     // Clear cookies in case session was abandoned without logging out.
     response.cookie('memberid', '');
     response.cookie('trainerid','');
+    response.cookie('popup','');
     const viewData = {
       title: 'Login or Signup',
     };
@@ -26,6 +27,7 @@ const accounts = {
   logout(request, response) {
     response.cookie('memberid', '');
     response.cookie('trainerid','');
+    response.cookie('popup','');
     response.redirect('/');
   },
 
@@ -57,6 +59,7 @@ const accounts = {
     if (member && request.body.password === member.password) {
       logger.info(`logging in ${member.email}`);
       response.cookie('memberid', member.email);
+      response.cookie('popup','Y');
       response.redirect('/dashboard');
     }
     else {

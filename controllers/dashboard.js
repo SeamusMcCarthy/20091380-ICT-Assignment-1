@@ -47,6 +47,9 @@ const dashboard = {
     const numOpenGoals = goalStore.getMemberGoalsByStatus(loggedInMember.id, "Open").length;
     const numMissedGoals = goalStore.getMemberGoalsByStatus(loggedInMember.id, "Missed").length;
     const numAchievedGoals = goalStore.getMemberGoalsByStatus(loggedInMember.id, "Achieved").length;
+    const displayPopup = request.cookies.popup;
+    logger.info("Memberindex = " + displayPopup);
+    response.cookie('popup','')
     const viewData = {
       title: 'Member Dashboard',
       assessments: assessmentStore.getMemberAssessments(loggedInMember.id).reverse(),
@@ -59,7 +62,8 @@ const dashboard = {
       numOpenGoals: numOpenGoals,
       numMissedGoals: numMissedGoals,
       numAchievedGoals: numAchievedGoals,
-      goalsArray: [numOpenGoals, numMissedGoals, numAchievedGoals]
+      goalsArray: [numOpenGoals, numMissedGoals, numAchievedGoals],
+      displayPopup: displayPopup
     };
     response.render('dashboard', viewData);
   },

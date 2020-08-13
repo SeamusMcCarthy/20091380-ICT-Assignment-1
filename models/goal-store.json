@@ -139,7 +139,7 @@
       "weight": "60",
       "id": "3f8dc110-dcd9-11ea-9d8b-c3dbb8bf684b",
       "memberid": "5fd605a0-dc1f-11ea-867e-99c10bb45854",
-      "status": "Open"
+      "status": "Achieved"
     },
     {
       "date": "Wed, 12 Aug 2020",
@@ -161,6 +161,13 @@
       "id": "5ee58a10-dcee-11ea-a8cd-1743a68a723a",
       "memberid": "5fd605a0-dc1f-11ea-867e-99c10bb45854",
       "status": "Missed"
+    },
+    {
+      "date": "Sat, 15 Aug 2020",
+      "weight": "45",
+      "id": "bb226ec0-ddb0-11ea-9e31-05115bdaa05b",
+      "memberid": "5fd605a0-dc1f-11ea-867e-99c10bb45854",
+      "status": "Open"
     }
   ]
 }
