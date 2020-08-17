@@ -194,6 +194,45 @@
       "date": "Thu, 13 Aug 2020 21:54:18 GMT",
       "comment": "",
       "trend": "Down"
+    },
+    {
+      "weight": "93.4",
+      "chest": "23",
+      "thigh": "23",
+      "upperarm": "23",
+      "waist": "23",
+      "hips": "23",
+      "id": "ae790f90-e0c5-11ea-9b33-f721f067e717",
+      "memberid": "5fd605a0-dc1f-11ea-867e-99c10bb45854",
+      "date": "Mon, 17 Aug 2020 20:10:22 GMT",
+      "comment": "",
+      "trend": "Up"
+    },
+    {
+      "weight": "93.2",
+      "chest": "23",
+      "thigh": "23",
+      "upperarm": "23",
+      "waist": "23",
+      "hips": "23",
+      "id": "b49c4220-e0c5-11ea-9b33-f721f067e717",
+      "memberid": "5fd605a0-dc1f-11ea-867e-99c10bb45854",
+      "date": "Mon, 17 Aug 2020 20:10:33 GMT",
+      "comment": "",
+      "trend": "Down"
+    },
+    {
+      "weight": "150",
+      "chest": "23",
+      "thigh": "23",
+      "upperarm": "23",
+      "waist": "23",
+      "hips": "23",
+      "id": "f4e13340-e0c5-11ea-9b33-f721f067e717",
+      "memberid": "5fd605a0-dc1f-11ea-867e-99c10bb45854",
+      "date": "Mon, 17 Aug 2020 20:12:20 GMT",
+      "comment": "",
+      "trend": "Down"
     }
   ]
 }

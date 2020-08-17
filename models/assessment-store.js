@@ -3,7 +3,7 @@
 const _ = require('lodash');
 
 const JsonStore = require('./json-store');
-const memberStore = require("./member-store");
+const memberStore = require('./member-store');
 const assessmentStore = {
 
   store: new JsonStore('./models/assessment-store.json', { assessmentCollection: [] }),
@@ -55,7 +55,7 @@ const assessmentStore = {
     this.store.save();
   },
 
-  updatetrend(assessmentid, trend) {
+  updateTrend(assessmentid, trend) {
     const assessment = this.store.findOneBy(this.collection, {id: assessmentid});
     assessment.trend = trend;
     this.store.save();

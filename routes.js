@@ -27,11 +27,11 @@ router.get('/deletemember/:id', accounts.deleteMember);
 router.get('/deleteassessment/:memberid/:id', assessments.deleteAssessment);
 router.get('/deletegoal/:memberid/:id', goals.deleteGoal);
 
+router.post('/register', accounts.register);
+router.post('/authenticate', accounts.authenticate);
 router.post('/dashboard/addassessment', assessments.addAssessment);
 router.post('/dashboard/addgoal', goals.addGoal);
 router.post('/dashboard/addgoal/:id', goals.addGoalTrainer);
-router.post('/register', accounts.register);
-router.post('/authenticate', accounts.authenticate);
 router.post('/updatemember', profile.updateProfile);
 router.post('/editcomment/:id', assessments.editComment);
 

@@ -2,7 +2,7 @@
 
 const _ = require('lodash');
 const JsonStore = require('./json-store');
-const logger = require("../utils/logger");
+const logger = require('../utils/logger');
 const goalStore = {
 
   store: new JsonStore('./models/goal-store.json', { goalCollection: [] }),

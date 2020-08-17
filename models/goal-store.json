@@ -167,6 +167,20 @@
       "weight": "45",
       "id": "bb226ec0-ddb0-11ea-9e31-05115bdaa05b",
       "memberid": "5fd605a0-dc1f-11ea-867e-99c10bb45854",
+      "status": "Missed"
+    },
+    {
+      "date": "Sat, 22 Aug 2020",
+      "weight": "90",
+      "id": "c33aef20-e0c5-11ea-9b33-f721f067e717",
+      "memberid": "5fd605a0-dc1f-11ea-867e-99c10bb45854",
+      "status": "Open"
+    },
+    {
+      "date": "Thurs, 20 Aug 2020",
+      "weight": "89",
+      "id": "e2ed8ee0-e0c5-11ea-9b33-f721f067e717",
+      "memberid": "5fd605a0-dc1f-11ea-867e-99c10bb45854",
       "status": "Open"
     }
   ]

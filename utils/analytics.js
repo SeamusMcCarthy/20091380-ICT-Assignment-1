@@ -1,7 +1,7 @@
-"use strict";
+'use strict';
 
-const assessmentStore = require('../models/assessment-store.js');
-const memberStore = require('../models/member-store.js');
+const assessmentStore = require('../models/assessment-store');
+const memberStore = require('../models/member-store');
 
 const INCHES_IN_METER = 39.37;
 const KILOS_PER_INCH = 2.3;
@@ -13,9 +13,9 @@ const analytics = {
     const member = memberStore.getMemberById(memberid);
     const latestweight = assessmentStore.getLatestWeight(memberid);
     if (assessmentStore.getLatestWeight(memberid) == null)
-      return member.startingweight / (member.height * member.height);
+      return member.startingweight / Math.pow(member.height, 2);
     else
-      return latestweight / (member.height * member.height);
+      return latestweight / Math.pow(member.height, 2);
   },
 
   determineBMICategory(BMI) {
@@ -39,22 +39,22 @@ const analytics = {
     let limitWeight = 0;
     let idealWeight = 0;
     let currentWeight = 0;
-//
+
     // Set lower limit weight based on gender
     if (member.gender === 'M')
       limitWeight = 50;
     else
       limitWeight = 45.5;
-//
+
     // Calc additional weight per inch over height limit
     if (heightInInches <= HEIGHT_LIMIT)
       idealWeight = limitWeight;
     else
       idealWeight = limitWeight + ((heightInInches - HEIGHT_LIMIT) * KILOS_PER_INCH);
-//
+
     // If no recorded assessments, use starting weight
     const latestweight = assessmentStore.getLatestWeight(memberid);
-    if (latestweight == 0 || latestweight == null)
+    if (latestweight === 0 || latestweight == null)
       currentWeight = member.startingweight;
     else
       currentWeight = latestweight;
