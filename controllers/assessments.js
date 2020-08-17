@@ -14,13 +14,14 @@ const assessment = {
 
     const loggedInMember = accounts.getCurrentMember(request);
     const latestWeight = assessmentStore.getLatestWeight(loggedInMember.id);
-    const newWeight = request.body.weight;
+    const newWeight = Number(request.body.weight);
 
     const newAssessment = request.body;
     newAssessment.id = uuid.v1();
     newAssessment.memberid = loggedInMember.id;
     newAssessment.date = new Date().toUTCString();
     newAssessment.comment = '';
+    newAssessment.weight = newWeight;
 
     // Determine weight trend
     if (newWeight > latestWeight)

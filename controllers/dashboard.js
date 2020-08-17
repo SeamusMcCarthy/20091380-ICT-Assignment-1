@@ -30,7 +30,7 @@ const dashboard = {
     for (let i = 0; i < goals.length; i++) {
       const goal = goals[i];
       if (goal.status === 'Open') {
-        if (Number(latestWeight) <= Number(goal.weight)) {
+        if (latestWeight <= goal.weight) {
           goalStore.updateAchieved(goal.id);
         } else {
           const date = new Date();

@@ -71,7 +71,7 @@ const memberStore = {
     member.password = updmember.password;
     member.address = updmember.address;
     member.height = updmember.height;
-    member.startingweight = updmember.startingweight;
+    member.startingweight = Number(updmember.startingweight);
     this.store.save();
   }
 };

@@ -46,7 +46,7 @@ const assessmentStore = {
     if (latestWeight === 0) {
       latestWeight = memberStore.getMemberById(memberid).startingweight;
     }
-    return latestWeight;
+    return Number(latestWeight);
   },
 
   editComment(comment) {

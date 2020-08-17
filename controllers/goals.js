@@ -17,6 +17,7 @@ const goal = {
     newGoal.id = uuid.v1();
     newGoal.memberid = loggedInMember.id;
     newGoal.status = 'Open';
+    newGoal.weight = Number(request.body.weight);
     goalStore.addGoal(newGoal);
     memberStore.incrementNumGoals(loggedInMember.id);
     response.cookie('popup','Y');

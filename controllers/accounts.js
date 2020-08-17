@@ -62,6 +62,7 @@ const accounts = {
     member.numassessments = 0;
     member.numgoals = 0;
     member.email = request.body.email.toLowerCase();
+    member.startingweight = Number(request.body.startingweight);
 
     if (memberStore.getMemberByEmail(member.email)) {
       logger.info('This email address is already in use - Please try again!');

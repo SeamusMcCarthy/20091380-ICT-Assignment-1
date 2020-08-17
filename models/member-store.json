@@ -7,10 +7,10 @@
       "password": "Test14",
       "address": "123",
       "height": "2.0",
-      "startingweight": "93.2",
+      "startingweight": 93.2,
       "id": "5fd605a0-dc1f-11ea-867e-99c10bb45854",
-      "numassessments": 7,
-      "numgoals": 12
+      "numassessments": 8,
+      "numgoals": 7
     }
   ]
 }
