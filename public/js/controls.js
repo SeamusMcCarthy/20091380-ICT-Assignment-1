@@ -15,6 +15,18 @@ $(document).ready(function() {
 
   // jQuery UI dialog used for goals popup
   $(function() {
-    $("#dialog").dialog();
+    $("#dialog").dialog({
+      hide: {
+        effect: "explode",
+        duration: 700
+      }
+    });
   });
+
+  // jQuery UI calendar
+  $(function() {
+    $("#datepicker").datepicker({
+      dateFormat: "D, dd M yy",
+      minDate: 0});
+  } );
 });

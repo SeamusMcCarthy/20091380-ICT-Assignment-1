@@ -1,4 +1,9 @@
-{{> menu id="about"}}
+{{#if member}}
+    {{> menu id="about"}}
+{{else}}
+    {{> trainermenu id="about"}}
+{{/if}}
+
 
 <section class="ui center aligned middle aligned two column grid segment">
     <div class="column">

@@ -1,10 +1,12 @@
 <form class="ui segment form" action="/dashboard/addgoal" method="POST">
     <div class="two fields">
-        <div class="field ui calendar" id="custom_format_calendar">
+<!--        <div class="field ui calendar" id="custom_format_calendar">-->
+        <div class="field">
             <label>Target Date</label>
             <div class="ui input left icon">
                 <i class="calendar icon"></i>
-                <input type="text" placeholder="Date" name="date" required>
+<!--                <input type="text" placeholder="Date" name="date" required>-->
+                <input type="text" placeholder="Date" name="date" id="datepicker" required>
             </div>
         </div>
         <div class="field">

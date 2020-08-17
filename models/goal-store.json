@@ -170,16 +170,23 @@
       "status": "Missed"
     },
     {
-      "date": "Sat, 22 Aug 2020",
-      "weight": "90",
-      "id": "c33aef20-e0c5-11ea-9b33-f721f067e717",
+      "date": "Wed, 19 Aug 2020",
+      "weight": "33",
+      "id": "3ecf1af0-e0c9-11ea-934a-41056d9da2c9",
       "memberid": "5fd605a0-dc1f-11ea-867e-99c10bb45854",
       "status": "Open"
     },
     {
-      "date": "Thurs, 20 Aug 2020",
-      "weight": "89",
-      "id": "e2ed8ee0-e0c5-11ea-9b33-f721f067e717",
+      "date": "Fri, 28 Aug 2020",
+      "weight": "95",
+      "id": "fb55a0d0-e0ca-11ea-9af6-17f59cd9849a",
+      "memberid": "5fd605a0-dc1f-11ea-867e-99c10bb45854",
+      "status": "Open"
+    },
+    {
+      "date": "Sat, 29 Aug 2020",
+      "weight": "90",
+      "id": "077f5630-e0cb-11ea-9af6-17f59cd9849a",
       "memberid": "5fd605a0-dc1f-11ea-867e-99c10bb45854",
       "status": "Open"
     }
