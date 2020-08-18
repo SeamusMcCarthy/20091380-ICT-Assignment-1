@@ -22,8 +22,13 @@ const assessment = {
     newAssessment.date = new Date().toUTCString();
     newAssessment.comment = '';
     newAssessment.weight = newWeight;
+    newAssessment.chest = Number(request.body.chest);
+    newAssessment.thigh = Number(request.body.thigh);
+    newAssessment.upperarm = Number(request.body.upperarm);
+    newAssessment.waist = Number(request.body.waist);
+    newAssessment.hips = Number(request.body.hips);
 
-    // Determine weight trend
+    // Determine weight trend by comparing new assessment weight to previous assessment weight
     if (newWeight > latestWeight)
       newAssessment.trend = "Up";
     else if (newWeight < latestWeight)

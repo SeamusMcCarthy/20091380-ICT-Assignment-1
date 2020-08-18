@@ -37,6 +37,7 @@ const assessmentStore = {
     return this.store.findBy(this.collection, { memberid: memberid });
   },
 
+  // Return the weight recorded in the most recent assessment or starting weight if no assessments recorded
   getLatestWeight(memberid) {
     let latestWeight = 0;
     const memberAssessments = this.store.findBy(this.collection, { memberid: memberid});

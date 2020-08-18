@@ -30,6 +30,7 @@ class JsonStore {
     return this.db.get(collection).value();
   }
 
+  // New method to return ALL entries after filter(s) applied
   findAllFilterBy(collection, filter) {
     const results = this.db.get(collection).filter(filter).value();
     return results;

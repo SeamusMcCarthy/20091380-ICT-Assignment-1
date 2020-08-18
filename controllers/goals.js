@@ -20,6 +20,7 @@ const goal = {
     newGoal.weight = Number(request.body.weight);
     goalStore.addGoal(newGoal);
     memberStore.incrementNumGoals(loggedInMember.id);
+    // Set flag so that 'Open Goal' popup appears when dashboard is displayed
     response.cookie('popup','Y');
     response.redirect('/dashboard');
 
@@ -45,6 +46,7 @@ const goal = {
     logger.info(`Deleting Goal ${memberid} ' + ' ${goalId}`);
     goalStore.removeGoal(goalId);
     memberStore.decrementNumGoals(memberid);
+    // Set flag so that 'Open Goal' popup appears when dashboard is displayed
     response.cookie('popup','Y');
     response.redirect('/dashboard');
 

@@ -23,6 +23,8 @@ const profile = {
     const updmember = request.body;
     const loggedInMember = accounts.getCurrentMember(request);
     updmember.id = loggedInMember.id;
+    updmember.height = Number(request.body.height);
+    updmember.startingweight = Number(request.body.startingweight);
     memberStore.updateProfile(updmember);
     response.cookie('memberid', updmember.email);
     response.redirect('/dashboard');

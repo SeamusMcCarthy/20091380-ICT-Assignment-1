@@ -154,6 +154,55 @@
       "id": "af738510-e0d9-11ea-bbd6-2de803e490ca",
       "memberid": "5fd605a0-dc1f-11ea-867e-99c10bb45854",
       "status": "Open"
+    },
+    {
+      "date": "Thu, 20 Aug 2020",
+      "weight": 90,
+      "id": "31b38640-e19f-11ea-968e-95ef9add6aae",
+      "memberid": "6ccbf650-e19e-11ea-85d6-2dc679ad8015",
+      "status": "Achieved"
+    },
+    {
+      "date": "Thu, 20 Aug 2020",
+      "weight": 70,
+      "id": "3fd49ed0-e19f-11ea-968e-95ef9add6aae",
+      "memberid": "6ccbf650-e19e-11ea-85d6-2dc679ad8015",
+      "status": "Open"
+    },
+    {
+      "date": "Tue, 18 Aug 2020",
+      "weight": 60,
+      "id": "57351e10-e19f-11ea-968e-95ef9add6aae",
+      "memberid": "6ccbf650-e19e-11ea-85d6-2dc679ad8015",
+      "status": "Missed"
+    },
+    {
+      "date": "Tue, 18 Aug 2020",
+      "weight": 80,
+      "id": "606d58d0-e19f-11ea-968e-95ef9add6aae",
+      "memberid": "6ccbf650-e19e-11ea-85d6-2dc679ad8015",
+      "status": "Achieved"
+    },
+    {
+      "date": "Thu, 20 Aug 2020",
+      "weight": 72,
+      "id": "6cad5550-e19f-11ea-968e-95ef9add6aae",
+      "memberid": "6ccbf650-e19e-11ea-85d6-2dc679ad8015",
+      "status": "Open"
+    },
+    {
+      "date": "Thu, 20 Aug 2020",
+      "weight": 73,
+      "id": "71c81890-e19f-11ea-968e-95ef9add6aae",
+      "memberid": "6ccbf650-e19e-11ea-85d6-2dc679ad8015",
+      "status": "Open"
+    },
+    {
+      "date": "Thu, 20 Aug 2020",
+      "weight": 55,
+      "id": "aa747530-e19f-11ea-968e-95ef9add6aae",
+      "memberid": "6ccbf650-e19e-11ea-85d6-2dc679ad8015",
+      "status": "Open"
     }
   ]
 }

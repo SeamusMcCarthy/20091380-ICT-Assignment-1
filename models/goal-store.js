@@ -55,7 +55,6 @@ const goalStore = {
     this.store.save();
   },
 
-
   removeAllGoals() {
     this.store.removeAll(this.collection);
     this.store.save();

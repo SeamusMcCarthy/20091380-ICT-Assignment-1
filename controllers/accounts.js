@@ -57,13 +57,16 @@ const accounts = {
 
   register(request, response) {
 
+    // Create the member
     const member = request.body;
     member.id = uuid.v1();
     member.numassessments = 0;
     member.numgoals = 0;
     member.email = request.body.email.toLowerCase();
+    member.height = Number(request.body.height);
     member.startingweight = Number(request.body.startingweight);
 
+    // Ensure the email address is not already in use. If so, return to main page but record in logger
     if (memberStore.getMemberByEmail(member.email)) {
       logger.info('This email address is already in use - Please try again!');
     } else {
@@ -99,6 +102,7 @@ const accounts = {
 
   getCurrentMember(request) {
 
+    // Retrieve the email address cookie and use to find member
     const memberEmail = request.cookies.memberid;
     const member = memberStore.getMemberByEmail(memberEmail);
     return memberStore.getMemberByEmail(memberEmail);

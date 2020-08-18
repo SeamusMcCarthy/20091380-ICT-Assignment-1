@@ -13,6 +13,7 @@ const dashboard = {
 
   checkIndex(request, response) {
 
+      // Direct flow to the appropriate dashboard
       if (request.cookies.memberid !== '')
         response.redirect('memberindex');
       else if (request.cookies.trainerid !== '')
@@ -26,7 +27,8 @@ const dashboard = {
     const latestWeight = assessmentStore.getLatestWeight(loggedInMember.id);
     const goals = goalStore.getMemberGoals(loggedInMember.id);
 
-    // As user has just logged in, assess their open goals in case the status needs to be updated
+    // As user has just logged in, assess their open goals in case the status of any needs to be updated
+    // This is done in case any goal target dates have passed since the user last logged in
     for (let i = 0; i < goals.length; i++) {
       const goal = goals[i];
       if (goal.status === 'Open') {
@@ -46,12 +48,13 @@ const dashboard = {
     const numMissedGoals = goalStore.getMemberGoalsByStatus(loggedInMember.id, 'Missed').length;
     const numAchievedGoals = goalStore.getMemberGoalsByStatus(loggedInMember.id, 'Achieved').length;
 
-    // Check if open goals popup needs to be displayed after login, goal added, goal deleted
+    // Check if open goals popup needs to be displayed after login, goal added or goal deleted
     const displayPopup = request.cookies.popup;
 
     // Set popup cookie to not display again until goal added or deleted
     response.cookie('popup','');
 
+    // Build data for view
     const viewData = {
       title: 'Member Dashboard',
       assessments: assessmentStore.getMemberAssessments(loggedInMember.id).reverse(),
@@ -64,7 +67,6 @@ const dashboard = {
       numOpenGoals: numOpenGoals,
       numMissedGoals: numMissedGoals,
       numAchievedGoals: numAchievedGoals,
-      // goalsArray: [numOpenGoals, numMissedGoals, numAchievedGoals],
       displayPopup: displayPopup
     };
     response.render('dashboard', viewData);
@@ -88,7 +90,7 @@ const dashboard = {
     const goals = goalStore.getMemberGoals(request.params.id).reverse();
     const assessments = assessmentStore.getMemberAssessments(request.params.id).reverse();
 
-    // As user has just logged in, assess their open goals in case the status needs to be updated
+    // As trainer has just selected the member, assess their open goals in case the status needs to be updated
     for (let i = 0; i < goals.length; i++) {
       const goal = goals[i];
       if (goal.status === 'Open') {
