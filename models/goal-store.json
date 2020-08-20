@@ -203,6 +203,41 @@
       "id": "aa747530-e19f-11ea-968e-95ef9add6aae",
       "memberid": "6ccbf650-e19e-11ea-85d6-2dc679ad8015",
       "status": "Open"
+    },
+    {
+      "date": "Thu, 20 Aug 2020",
+      "weight": 85,
+      "id": "114c58e0-e326-11ea-b8bf-85e0d9101be8",
+      "memberid": "5fd605a0-dc1f-11ea-867e-99c10bb45854",
+      "status": "Open"
+    },
+    {
+      "date": "Wed, 19 Aug 2020",
+      "weight": 79,
+      "id": "4b023640-e326-11ea-b8bf-85e0d9101be8",
+      "memberid": "5fd605a0-dc1f-11ea-867e-99c10bb45854",
+      "status": "Missed"
+    },
+    {
+      "date": "Wed, 19 Aug 2020",
+      "weight": 81,
+      "id": "fd605500-e327-11ea-b170-d988d197cfde",
+      "memberid": "5fd605a0-dc1f-11ea-867e-99c10bb45854",
+      "status": "Missed"
+    },
+    {
+      "date": "Thu, 20 Aug 2020",
+      "weight": 79,
+      "id": "03d0bd30-e328-11ea-b170-d988d197cfde",
+      "memberid": "5fd605a0-dc1f-11ea-867e-99c10bb45854",
+      "status": "Open"
+    },
+    {
+      "date": "Fri, 21 Aug 2020",
+      "weight": 94,
+      "id": "0b858c40-e328-11ea-b170-d988d197cfde",
+      "memberid": "5fd605a0-dc1f-11ea-867e-99c10bb45854",
+      "status": "Achieved"
     }
   ]
 }

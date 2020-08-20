@@ -36,8 +36,10 @@ const dashboard = {
           goalStore.updateAchieved(goal.id);
         } else {
           const date = new Date();
+          // Set time to 00:00:00:00 as we want the target date to have completely passed before we set as 'Missed'
+          date.setHours(0, 0, 0, 0);
           const goalDate = new Date(goal.date);
-          if (date > goalDate)
+          if (Date.parse(date) > Date.parse(goalDate))
             goalStore.updateMissed(goal.id);
         }
       }
@@ -100,8 +102,10 @@ const dashboard = {
         }
         else {
           const date = new Date();
+          // Set time to 00:00:00:00 as we want the target date to have completely passed before we set as 'Missed'
+          date.setHours(0, 0, 0, 0);
           const goalDate = new Date(goal.date);
-          if (date > goalDate)
+          if (Date.parse(date) > Date.parse(goalDate))
             goalStore.updateMissed(goal.id);
         }
       }
