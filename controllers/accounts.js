@@ -19,6 +19,7 @@ const accounts = {
     response.cookie('memberid', '');
     response.cookie('trainerid','');
     response.cookie('popup','');
+    response.cookie('error','');
 
     const viewData = {
       title: 'Login or Signup',
@@ -82,7 +83,7 @@ const accounts = {
   authenticate(request, response) {
 
     // set error cookie to blank
-    response.cookie('error','N');
+    response.cookie('error','');
 
     // Attempt to login a member. If not found, try trainer
     const member = memberStore.getMemberByEmail(request.body.email.toLowerCase());
