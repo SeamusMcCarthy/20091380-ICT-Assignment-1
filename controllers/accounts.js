@@ -31,6 +31,7 @@ const accounts = {
 
     const viewData = {
       title: 'Login to the Service',
+      error: request.cookies.error
     };
     response.render('login', viewData);
 
@@ -42,6 +43,7 @@ const accounts = {
     response.cookie('memberid', '');
     response.cookie('trainerid','');
     response.cookie('popup','');
+    response.cookie('error','');
     response.redirect('/');
 
   },
@@ -79,6 +81,9 @@ const accounts = {
 
   authenticate(request, response) {
 
+    // set error cookie to blank
+    response.cookie('error','N');
+
     // Attempt to login a member. If not found, try trainer
     const member = memberStore.getMemberByEmail(request.body.email.toLowerCase());
     if (member && request.body.password === member.password) {
@@ -95,6 +100,8 @@ const accounts = {
         response.redirect('/dashboard');
       }
       else {
+        // login error so set cookie to 'Y'
+        response.cookie('error','Y')
         response.redirect('/login');
       }
     }
