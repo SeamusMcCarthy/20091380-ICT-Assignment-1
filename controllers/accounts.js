@@ -34,6 +34,7 @@ const accounts = {
       title: 'Login to the Service',
       error: request.cookies.error
     };
+    response.cookie('error','');
     response.render('login', viewData);
 
   },
@@ -53,12 +54,17 @@ const accounts = {
 
     const viewData = {
       title: 'Login to the Service',
+      error: request.cookies.error
     };
+    response.cookie('error','');
     response.render('signup', viewData);
 
   },
 
   register(request, response) {
+
+    // set error cookie to blank
+    response.cookie('error','');
 
     // Create the member
     const member = request.body;
@@ -71,12 +77,13 @@ const accounts = {
 
     // Ensure the email address is not already in use. If so, return to main page but record in logger
     if (memberStore.getMemberByEmail(member.email)) {
-      logger.info('This email address is already in use - Please try again!');
+      response.cookie('error','Y');
+      // logger.info('This email address is already in use - Please try again!');
     } else {
       memberStore.addMember(member);
       logger.info(`registering ${member.email}`);
     }
-    response.redirect('/');
+    response.redirect('/signup');
 
   },
 
