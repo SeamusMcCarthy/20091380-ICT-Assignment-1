@@ -2,7 +2,7 @@
 
 const _ = require('lodash');
 const JsonStore = require('./json-store');
-const logger = require('../utils/logger');
+
 const goalStore = {
 
   store: new JsonStore('./models/goal-store.json', { goalCollection: [] }),
@@ -50,8 +50,8 @@ const goalStore = {
   },
 
   updateMissed(id) {
-    const goal = this.getGoal(id);
-    goal.status = "Missed";
+    const updGoal = this.getGoal(id);
+    updGoal.status = "Missed";
     this.store.save();
   },
 

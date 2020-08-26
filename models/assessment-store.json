@@ -259,6 +259,19 @@
       "date": "Tue, 18 Aug 2020 22:07:08 GMT",
       "comment": "",
       "trend": "Down"
+    },
+    {
+      "weight": 93.1,
+      "chest": 23,
+      "thigh": 23,
+      "upperarm": 23,
+      "waist": 23,
+      "hips": 23,
+      "id": "21814e60-e7e9-11ea-989c-cb86e1e6339f",
+      "memberid": "297d2090-e19e-11ea-bfd4-29a20704fcaa",
+      "date": "Wed, 26 Aug 2020 22:11:46 GMT",
+      "comment": "",
+      "trend": "Up"
     }
   ]
 }

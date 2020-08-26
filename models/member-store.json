@@ -18,11 +18,11 @@
       "email": "test15@test.com",
       "password": "123",
       "address": "123",
-      "height": "1.0",
+      "height": 2,
       "startingweight": 35,
       "id": "297d2090-e19e-11ea-bfd4-29a20704fcaa",
-      "numassessments": 0,
-      "numgoals": 0
+      "numassessments": 1,
+      "numgoals": 7
     },
     {
       "name": "Test16",

@@ -238,6 +238,55 @@
       "id": "0b858c40-e328-11ea-b170-d988d197cfde",
       "memberid": "5fd605a0-dc1f-11ea-867e-99c10bb45854",
       "status": "Achieved"
+    },
+    {
+      "date": "Tue, 25 Aug 2020",
+      "weight": 30,
+      "id": "c144b020-e7e6-11ea-9d48-8d4029aac704",
+      "memberid": "297d2090-e19e-11ea-bfd4-29a20704fcaa",
+      "status": "Missed"
+    },
+    {
+      "date": "Tue, 25 Aug 2020",
+      "weight": 25,
+      "id": "169b9ca0-e7e7-11ea-989c-cb86e1e6339f",
+      "memberid": "297d2090-e19e-11ea-bfd4-29a20704fcaa",
+      "status": "Missed"
+    },
+    {
+      "date": "Wed, 26 Aug 2020",
+      "weight": 29,
+      "id": "21a82230-e7e7-11ea-989c-cb86e1e6339f",
+      "memberid": "297d2090-e19e-11ea-bfd4-29a20704fcaa",
+      "status": "Open"
+    },
+    {
+      "date": "Wed, 26 Aug 2020",
+      "weight": 36,
+      "id": "268910c0-e7e7-11ea-989c-cb86e1e6339f",
+      "memberid": "297d2090-e19e-11ea-bfd4-29a20704fcaa",
+      "status": "Achieved"
+    },
+    {
+      "date": "Thu, 27 Aug 2020",
+      "weight": 30,
+      "id": "2c8a8a80-e7e7-11ea-989c-cb86e1e6339f",
+      "memberid": "297d2090-e19e-11ea-bfd4-29a20704fcaa",
+      "status": "Open"
+    },
+    {
+      "date": "Thu, 27 Aug 2020",
+      "weight": 40,
+      "id": "30b52160-e7e7-11ea-989c-cb86e1e6339f",
+      "memberid": "297d2090-e19e-11ea-bfd4-29a20704fcaa",
+      "status": "Achieved"
+    },
+    {
+      "date": "Wed, 26 Aug 2020",
+      "weight": 35,
+      "id": "aad5c760-e7e7-11ea-989c-cb86e1e6339f",
+      "memberid": "297d2090-e19e-11ea-bfd4-29a20704fcaa",
+      "status": "Achieved"
     }
   ]
 }

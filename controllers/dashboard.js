@@ -3,6 +3,7 @@
 const logger = require('../utils/logger');
 
 const accounts = require ('./accounts');
+const goalsCont = require('./goals');
 const analytics = require('../utils/analytics');
 
 const assessmentStore = require('../models/assessment-store');
@@ -25,25 +26,12 @@ const dashboard = {
 
     const loggedInMember = accounts.getCurrentMember(request);
     const latestWeight = assessmentStore.getLatestWeight(loggedInMember.id);
-    const goals = goalStore.getMemberGoals(loggedInMember.id);
 
-    // As user has just logged in, assess their open goals in case the status of any needs to be updated
+    // Assess the user's open goals in case the status of any needs to be updated
     // This is done in case any goal target dates have passed since the user last logged in
-    for (let i = 0; i < goals.length; i++) {
-      const goal = goals[i];
-      if (goal.status === 'Open') {
-        if (latestWeight <= goal.weight) {
-          goalStore.updateAchieved(goal.id);
-        } else {
-          const date = new Date();
-          // Set time to 00:00:00:00 as we want the target date to have completely passed before we set as 'Missed'
-          date.setHours(0, 0, 0, 0);
-          const goalDate = new Date(goal.date);
-          if (Date.parse(date) > Date.parse(goalDate))
-            goalStore.updateMissed(goal.id);
-        }
-      }
-    }
+    // or where statuses are affected by the most recent assessment entry
+    goalsCont.assessGoalStatuses(loggedInMember.id);
+    const goals = goalStore.getMemberGoals(loggedInMember.id).reverse();
 
     // Retrieve num of goals by status
     const numOpenGoals = goalStore.getMemberGoalsByStatus(loggedInMember.id, 'Open').length;
@@ -62,7 +50,7 @@ const dashboard = {
       assessments: assessmentStore.getMemberAssessments(loggedInMember.id).reverse(),
       goals: goalStore.getMemberGoals(loggedInMember.id).reverse(),
       name: loggedInMember.name,
-      latestweight: assessmentStore.getLatestWeight(loggedInMember.id),
+      latestweight: latestWeight,
       BMI: analytics.calculateBMI(loggedInMember.id).toFixed(2),
       BMICategory: analytics.determineBMICategory(analytics.calculateBMI(loggedInMember.id).toFixed(2)),
       isidealbodyweight: analytics.isIdealBodyWeight(loggedInMember.id),
@@ -89,27 +77,13 @@ const dashboard = {
   trainerAssessments(request, response) {
 
     const latestWeight = assessmentStore.getLatestWeight(request.params.id);
-    const goals = goalStore.getMemberGoals(request.params.id).reverse();
     const assessments = assessmentStore.getMemberAssessments(request.params.id).reverse();
 
-    // As trainer has just selected the member, assess their open goals in case the status needs to be updated
-    for (let i = 0; i < goals.length; i++) {
-      const goal = goals[i];
-      if (goal.status === 'Open') {
-        if (Number(latestWeight) <= Number(goal.weight)) {
-          logger.info('weights = ' + latestWeight + ' ' + goal.weight);
-          goalStore.updateAchieved(goal.id);
-        }
-        else {
-          const date = new Date();
-          // Set time to 00:00:00:00 as we want the target date to have completely passed before we set as 'Missed'
-          date.setHours(0, 0, 0, 0);
-          const goalDate = new Date(goal.date);
-          if (Date.parse(date) > Date.parse(goalDate))
-            goalStore.updateMissed(goal.id);
-        }
-      }
-    }
+    // Assess the member's open goals in case the status of any needs to be updated
+    // This is done in case any goal target dates have passed since the user last logged in
+    goalsCont.assessGoalStatuses(request.params.id);
+    const goals = goalStore.getMemberGoals(request.params.id).reverse();
+
     const viewData = {
       title: 'Trainer Dashboard',
       assessments: assessments,

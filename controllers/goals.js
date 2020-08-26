@@ -6,7 +6,7 @@ const uuid = require('uuid');
 
 const goalStore = require('../models/goal-store');
 const memberStore = require('../models/member-store');
-
+const assessmentStore = require('../models/assessment-store');
 
 const goal = {
 
@@ -51,6 +51,31 @@ const goal = {
     response.redirect('/dashboard');
 
   },
+
+  assessGoalStatuses(memberid) {
+    const goals = goalStore.getMemberOpenGoals(memberid);
+    const latestWeight = assessmentStore.getLatestWeight(memberid);
+
+    // Establish current date and set time to 00:00:00:00 as we want the target date to have completely passed
+    // before we set the status as 'Missed'
+    const date = new Date();
+    date.setHours(0, 0, 0, 0);
+
+    for (let i = 0; i < goals.length; i++) {
+      const goal = goals[i];
+      const goalDate = new Date(goal.date);
+      if (Date.parse(date) > Date.parse(goalDate)) {
+        goalStore.updateMissed(goal.id);
+      }
+      else {
+        if (goal.status === 'Open') {
+          if (latestWeight <= goal.weight) {
+            goalStore.updateAchieved(goal.id);
+          }
+        }
+      }
+    }
+  }
 }
 
 module.exports = goal;
