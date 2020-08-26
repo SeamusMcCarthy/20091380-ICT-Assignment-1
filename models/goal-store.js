@@ -12,18 +12,6 @@ const goalStore = {
     return this.store.findAll(this.collection);
   },
 
-  getMemberOpenGoals(memberid) {
-    return this.store.findAllFilterBy(this.collection, {memberid: memberid, status: "Open"});
-  },
-
-  getMemberMissedGoals(memberid) {
-    return this.store.findAllFilterBy(this.collection, {memberid: memberid, status: "Missed"});
-  },
-
-  getMemberAchievedGoals(memberid) {
-    return this.store.findAllFilterBy(this.collection, {memberid: memberid, status: "Achieved"});
-  },
-
   getMemberGoalsByStatus(memberid, status) {
     return this.store.findAllFilterBy(this.collection, {memberid: memberid, status: status});
   },

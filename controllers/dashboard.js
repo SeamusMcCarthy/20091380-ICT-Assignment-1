@@ -48,7 +48,7 @@ const dashboard = {
     const viewData = {
       title: 'Member Dashboard',
       assessments: assessmentStore.getMemberAssessments(loggedInMember.id).reverse(),
-      goals: goalStore.getMemberGoals(loggedInMember.id).reverse(),
+      goals: goals,
       name: loggedInMember.name,
       latestweight: latestWeight,
       BMI: analytics.calculateBMI(loggedInMember.id).toFixed(2),

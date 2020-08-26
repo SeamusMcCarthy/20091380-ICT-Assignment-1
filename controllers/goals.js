@@ -53,7 +53,7 @@ const goal = {
   },
 
   assessGoalStatuses(memberid) {
-    const goals = goalStore.getMemberOpenGoals(memberid);
+    const goals = goalStore.getMemberGoalsByStatus(memberid, 'Open');
     const latestWeight = assessmentStore.getLatestWeight(memberid);
 
     // Establish current date and set time to 00:00:00:00 as we want the target date to have completely passed
