@@ -128,13 +128,6 @@
       "status": "Missed"
     },
     {
-      "date": "Fri, 28 Aug 2020",
-      "weight": "200",
-      "id": "777db5f0-e0d3-11ea-89cf-9d62fc9064c9",
-      "memberid": "5fd605a0-dc1f-11ea-867e-99c10bb45854",
-      "status": "Achieved"
-    },
-    {
       "date": "Wed, 26 Aug 2020",
       "weight": "60",
       "id": "7d860d80-e0d3-11ea-89cf-9d62fc9064c9",
@@ -146,14 +139,7 @@
       "weight": 55,
       "id": "63f638e0-e0d8-11ea-bbd6-2de803e490ca",
       "memberid": "5fd605a0-dc1f-11ea-867e-99c10bb45854",
-      "status": "Open"
-    },
-    {
-      "date": "Fri, 28 Aug 2020",
-      "weight": 50,
-      "id": "af738510-e0d9-11ea-bbd6-2de803e490ca",
-      "memberid": "5fd605a0-dc1f-11ea-867e-99c10bb45854",
-      "status": "Open"
+      "status": "Missed"
     },
     {
       "date": "Thu, 20 Aug 2020",
@@ -209,7 +195,7 @@
       "weight": 85,
       "id": "114c58e0-e326-11ea-b8bf-85e0d9101be8",
       "memberid": "5fd605a0-dc1f-11ea-867e-99c10bb45854",
-      "status": "Open"
+      "status": "Missed"
     },
     {
       "date": "Wed, 19 Aug 2020",
@@ -230,7 +216,7 @@
       "weight": 79,
       "id": "03d0bd30-e328-11ea-b170-d988d197cfde",
       "memberid": "5fd605a0-dc1f-11ea-867e-99c10bb45854",
-      "status": "Open"
+      "status": "Missed"
     },
     {
       "date": "Fri, 21 Aug 2020",
@@ -301,6 +287,27 @@
       "id": "f5b88470-e7ec-11ea-812e-57ba18b27fa5",
       "memberid": "297d2090-e19e-11ea-bfd4-29a20704fcaa",
       "status": "Achieved"
+    },
+    {
+      "date": "Sat, 29 Aug 2020",
+      "weight": 55,
+      "id": "b6262c50-e8ae-11ea-b536-d966054d2bce",
+      "memberid": "5fd605a0-dc1f-11ea-867e-99c10bb45854",
+      "status": "Achieved"
+    },
+    {
+      "date": "Mon, 31 Aug 2020",
+      "weight": 40,
+      "id": "272f4cb0-e8b4-11ea-b536-d966054d2bce",
+      "memberid": "5fd605a0-dc1f-11ea-867e-99c10bb45854",
+      "status": "Open"
+    },
+    {
+      "date": "Sat, 29 Aug 2020",
+      "weight": 35,
+      "id": "bb58fcb0-e8b4-11ea-b536-d966054d2bce",
+      "memberid": "5fd605a0-dc1f-11ea-867e-99c10bb45854",
+      "status": "Open"
     }
   ]
 }

@@ -83,12 +83,17 @@ const dashboard = {
     // This is done in case any goal target dates have passed since the user last logged in
     goalsCont.assessGoalStatuses(request.params.id);
     const goals = goalStore.getMemberGoals(request.params.id).reverse();
-
+    const member = memberStore.getMemberById(request.params.id);
     const viewData = {
       title: 'Trainer Dashboard',
       assessments: assessments,
       goals: goals,
-      memberid: request.params.id
+      memberid: request.params.id,
+      name: member.name,
+      latestweight: latestWeight,
+      BMI: analytics.calculateBMI(request.params.id).toFixed(2),
+      BMICategory: analytics.determineBMICategory(analytics.calculateBMI(request.params.id).toFixed(2)),
+      isidealbodyweight: analytics.isIdealBodyWeight(request.params.id),
     };
     response.render('trainerassessment', viewData);
 

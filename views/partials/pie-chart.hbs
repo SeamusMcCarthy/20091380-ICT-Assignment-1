@@ -14,7 +14,14 @@
         ]);
 
         // Optional; add a title and set the width and height of the chart
-        var options = {'title':'Goal History', 'width':400, 'height':300};
+        var options = {
+          'title':'Goal History',
+          'width':400,
+          'height':300,
+          'legend':'top',
+          'is3D':true,
+          'colors':['#2185D0','#DB2828','#21BA45'],
+        };
 
         // Display the chart inside the <div> element with id="piechart"
         var chart = new google.visualization.PieChart(document.getElementById('pieChart'));
