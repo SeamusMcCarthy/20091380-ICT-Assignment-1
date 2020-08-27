@@ -209,19 +209,6 @@
       "trend": "Down"
     },
     {
-      "weight": 60,
-      "chest": "23",
-      "thigh": "23",
-      "upperarm": "23",
-      "waist": "23",
-      "hips": "23",
-      "id": "202ba370-e0d8-11ea-bec6-41350c556408",
-      "memberid": "5fd605a0-dc1f-11ea-867e-99c10bb45854",
-      "date": "Mon, 17 Aug 2020 22:22:24 GMT",
-      "comment": "This is a comment",
-      "trend": "Down"
-    },
-    {
       "weight": 93.2,
       "chest": "23",
       "thigh": "23",
@@ -272,19 +259,6 @@
       "date": "Wed, 26 Aug 2020 22:11:46 GMT",
       "comment": "",
       "trend": "Up"
-    },
-    {
-      "weight": 50,
-      "chest": 50,
-      "thigh": 50,
-      "upperarm": 50,
-      "waist": 50,
-      "hips": 50,
-      "id": "fbe59aa0-e8b3-11ea-b536-d966054d2bce",
-      "memberid": "5fd605a0-dc1f-11ea-867e-99c10bb45854",
-      "date": "Thu, 27 Aug 2020 22:23:51 GMT",
-      "comment": "  This is unexpected",
-      "trend": "Down"
     }
   ]
 }

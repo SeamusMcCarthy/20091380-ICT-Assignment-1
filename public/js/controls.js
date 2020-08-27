@@ -19,6 +19,9 @@ $(document).ready(function() {
       hide: {
         effect: "explode",
         duration: 700
+      },
+      open: function(){
+        setTimeout("$('#dialog').dialog('close')",2000);
       }
     });
   });

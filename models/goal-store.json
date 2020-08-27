@@ -296,16 +296,23 @@
       "status": "Achieved"
     },
     {
-      "date": "Mon, 31 Aug 2020",
-      "weight": 40,
-      "id": "272f4cb0-e8b4-11ea-b536-d966054d2bce",
+      "date": "Sat, 29 Aug 2020",
+      "weight": 35,
+      "id": "bb58fcb0-e8b4-11ea-b536-d966054d2bce",
       "memberid": "5fd605a0-dc1f-11ea-867e-99c10bb45854",
       "status": "Open"
     },
     {
       "date": "Sat, 29 Aug 2020",
-      "weight": 35,
-      "id": "bb58fcb0-e8b4-11ea-b536-d966054d2bce",
+      "weight": 80,
+      "id": "97d64fe0-e8b9-11ea-b276-d1cbe7c9f44a",
+      "memberid": "5fd605a0-dc1f-11ea-867e-99c10bb45854",
+      "status": "Open"
+    },
+    {
+      "date": "Sat, 29 Aug 2020",
+      "weight": 80,
+      "id": "af0b7960-e8b9-11ea-bcc2-1d30459348a6",
       "memberid": "5fd605a0-dc1f-11ea-867e-99c10bb45854",
       "status": "Open"
     }
