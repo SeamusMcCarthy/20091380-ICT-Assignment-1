@@ -9,44 +9,8 @@
       "height": "2.0",
       "startingweight": 93.2,
       "id": "5fd605a0-dc1f-11ea-867e-99c10bb45854",
-      "numassessments": 7,
+      "numassessments": 9,
       "numgoals": 14
-    },
-    {
-      "name": "Test15",
-      "gender": "M",
-      "email": "test15@test.com",
-      "password": "123",
-      "address": "123",
-      "height": 2,
-      "startingweight": 35,
-      "id": "297d2090-e19e-11ea-bfd4-29a20704fcaa",
-      "numassessments": 1,
-      "numgoals": 9
-    },
-    {
-      "name": "Test16",
-      "gender": "M",
-      "email": "test16@test.com",
-      "password": "123",
-      "address": "Test16",
-      "height": "2",
-      "startingweight": 50,
-      "id": "56f8a6c0-e19e-11ea-bfd4-29a20704fcaa",
-      "numassessments": 0,
-      "numgoals": 0
-    },
-    {
-      "name": "Test17",
-      "gender": "M",
-      "email": "test17@test.com",
-      "password": "123",
-      "address": "123",
-      "height": 2.2,
-      "startingweight": 123.6,
-      "id": "6ccbf650-e19e-11ea-85d6-2dc679ad8015",
-      "numassessments": 2,
-      "numgoals": 7
     }
   ]
 }
