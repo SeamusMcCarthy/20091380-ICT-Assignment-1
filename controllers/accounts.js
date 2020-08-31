@@ -118,9 +118,7 @@ const accounts = {
   getCurrentMember(request) {
 
     // Retrieve the email address cookie and use to find member
-    const memberEmail = request.cookies.memberid;
-    const member = memberStore.getMemberByEmail(memberEmail);
-    return memberStore.getMemberByEmail(memberEmail);
+    return memberStore.getMemberByEmail(request.cookies.memberid);
 
   },
 
