@@ -19,7 +19,7 @@ const goal = {
     newGoal.status = 'Open';
     newGoal.weight = Number(request.body.weight);
     goalStore.addGoal(newGoal);
-    memberStore.incrementNumGoals(loggedInMember.id);
+    memberStore.updateNumGoals(loggedInMember.id, goalStore.getMemberGoals(loggedInMember.id).length);
     // Set flag so that 'Open Goal' popup appears when dashboard is displayed
     response.cookie('popup','Y');
     response.redirect('/dashboard');
@@ -34,7 +34,7 @@ const goal = {
     newGoal.memberid = member.id;
     newGoal.status = 'Open';
     goalStore.addGoal(newGoal);
-    memberStore.incrementNumGoals(member.id);
+    memberStore.updateNumGoals(member.id, goalStore.getMemberGoals(member.id).length);
     response.redirect('/dashboard');
 
   },
@@ -45,7 +45,7 @@ const goal = {
     const goalId = request.params.id;
     logger.info(`Deleting Goal ${memberid} ' + ' ${goalId}`);
     goalStore.removeGoal(goalId);
-    memberStore.decrementNumGoals(memberid);
+    memberStore.updateNumGoals(memberid, goalStore.getMemberGoals(memberid).length);
     // Set flag so that 'Open Goal' popup appears when dashboard is displayed
     response.cookie('popup','Y');
     response.redirect('/dashboard');

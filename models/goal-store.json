@@ -186,13 +186,6 @@
     {
       "date": "Sat, 29 Aug 2020",
       "weight": 80,
-      "id": "97d64fe0-e8b9-11ea-b276-d1cbe7c9f44a",
-      "memberid": "5fd605a0-dc1f-11ea-867e-99c10bb45854",
-      "status": "Missed"
-    },
-    {
-      "date": "Sat, 29 Aug 2020",
-      "weight": 80,
       "id": "af0b7960-e8b9-11ea-bcc2-1d30459348a6",
       "memberid": "5fd605a0-dc1f-11ea-867e-99c10bb45854",
       "status": "Missed"
@@ -201,6 +194,20 @@
       "date": "Thu, 10 Sep 2020",
       "weight": 90,
       "id": "56c3f5b0-eab3-11ea-ad47-49c6c15d4c13",
+      "memberid": "5fd605a0-dc1f-11ea-867e-99c10bb45854",
+      "status": "Achieved"
+    },
+    {
+      "date": "Tue, 01 Sep 2020",
+      "weight": 60,
+      "id": "e9aff3d0-ec9b-11ea-872e-11adf2d572c7",
+      "memberid": "5fd605a0-dc1f-11ea-867e-99c10bb45854",
+      "status": "Open"
+    },
+    {
+      "date": "Sat, 05 Sep 2020",
+      "weight": 50,
+      "id": "5097cb40-ec9c-11ea-98a6-2305302b57cd",
       "memberid": "5fd605a0-dc1f-11ea-867e-99c10bb45854",
       "status": "Open"
     }

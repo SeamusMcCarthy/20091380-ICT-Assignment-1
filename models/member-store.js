@@ -31,35 +31,15 @@ const memberStore = {
     this.store.save();
   },
 
-  incrementNumAssessments(id) {
+  updateNumAssessments(id, numAssessments) {
     const member = this.store.findOneBy(this.collection, {id: id});
-    let num = member.numassessments;
-    num += 1;
-    member.numassessments = num;
+    member.numassessments = numAssessments;
     this.store.save();
   },
 
-  incrementNumGoals(id) {
+  updateNumGoals(id, numGoals) {
     const member = this.store.findOneBy(this.collection, {id: id});
-    let num = member.numgoals;
-    num += 1;
-    member.numgoals = num;
-    this.store.save();
-  },
-
-  decrementNumAssessments(id) {
-    const member = this.store.findOneBy(this.collection, {id: id});
-    let num = member.numassessments;
-    num -= 1;
-    member.numassessments = num;
-    this.store.save();
-  },
-
-  decrementNumGoals(id) {
-    const member = this.store.findOneBy(this.collection, {id: id});
-    let num = member.numgoals;
-    num -= 1;
-    member.numgoals = num;
+    member.numgoals = numGoals;
     this.store.save();
   },
 

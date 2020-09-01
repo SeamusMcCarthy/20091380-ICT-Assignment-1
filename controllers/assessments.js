@@ -36,9 +36,9 @@ const assessment = {
     else
       newAssessment.trend = "Equal";
 
-    // Add assessment & increment number of recorded assessments
+    // Add assessment & update number of recorded assessments
     assessmentStore.addAssessment(newAssessment);
-    memberStore.incrementNumAssessments(loggedInMember.id);
+    memberStore.updateNumAssessments(loggedInMember.id, assessmentStore.getMemberAssessments(loggedInMember.id).length);
     response.redirect('/dashboard');
 
   },
@@ -49,14 +49,13 @@ const assessment = {
     const assessmentId = request.params.id;
     logger.info(`Deleting Assessment ${memberid} ' + ' ${assessmentId}`);
     assessmentStore.removeAssessment(assessmentId);
+    const assessments = assessmentStore.getMemberAssessments(memberid);
 
-    // Decrement the number of assessments stored against this member
-    memberStore.decrementNumAssessments(memberid);
+    // Update the number of assessments stored against this member
+    memberStore.updateNumAssessments(memberid, assessments.length);
 
     // Removal of assessments can impact trending so re-evaluate all remaining entries and update trend indicators
-    const assessments = assessmentStore.getMemberAssessments(memberid);
     const member = memberStore.getMemberById(memberid);
-
     for (let x = 0; x < assessments.length; x++) {
       if (x === 0) {
         if (assessments[x].weight > member.startingweight)
