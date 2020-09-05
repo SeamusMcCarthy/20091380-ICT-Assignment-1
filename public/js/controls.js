@@ -46,6 +46,6 @@ $(document).ready(function() {
   $(function() {
     $("#datepicker").datepicker({
       dateFormat: "D, dd M yy",
-      minDate: 0});
+      minDate: -1});
   } );
 });
