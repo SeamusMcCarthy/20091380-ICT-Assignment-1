@@ -13,7 +13,7 @@ const goalStore = {
   },
 
   getMemberGoalsByStatus(memberid, status) {
-    return this.store.findAllFilterBy(this.collection, {memberid: memberid, status: status});
+    return this.store.findBy(this.collection, {memberid: memberid, status: status});
   },
 
   getGoal(id) {
